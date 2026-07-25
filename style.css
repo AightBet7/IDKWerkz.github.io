@@ -1,6 +1,200 @@
-.logo {
-    width: 400px;
-    height: auto;
-    display: block;
-    margin: 30px auto;
+/* ==========================
+   IDK Werkz Premium Theme
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+    color:white;
+    text-align:center;
+
+    background:
+    radial-gradient(circle at 20% 20%, rgba(255,215,0,0.10), transparent 35%),
+    radial-gradient(circle at 80% 25%, rgba(255,255,255,0.04), transparent 40%),
+    radial-gradient(circle at 35% 75%, rgba(255,215,0,0.08), transparent 45%),
+    linear-gradient(135deg,#050505,#121212,#1a1a1a,#050505);
+
+    background-attachment:fixed;
+}
+
+/* ==========================
+   Header
+========================== */
+
+header{
+
+    padding:40px 20px;
+
+}
+
+/* Logo */
+
+.logo{
+
+    width:400px;
+    max-width:90%;
+    display:block;
+    margin:25px auto;
+
+}
+
+/* Main title */
+
+h1{
+
+    font-size:60px;
+    color:#D4AF37;
+
+    text-shadow:
+    0 0 10px rgba(212,175,55,.7),
+    0 0 20px rgba(212,175,55,.3);
+
+}
+
+/* Subtitle */
+
+.tagline{
+
+    color:#dddddd;
+    font-size:22px;
+    margin-top:10px;
+    margin-bottom:40px;
+
+}
+
+/* ==========================
+   Navigation
+========================== */
+
+nav{
+
+    margin-top:20px;
+
+}
+
+nav a{
+
+    color:#D4AF37;
+
+    text-decoration:none;
+
+    margin:15px;
+
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:white;
+
+    text-shadow:0 0 12px gold;
+
+}
+
+/* ==========================
+   Sections
+========================== */
+
+section{
+
+    width:85%;
+    max-width:1100px;
+
+    margin:60px auto;
+
+    background:rgba(0,0,0,.45);
+
+    border:1px solid rgba(212,175,55,.35);
+
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:
+    0 0 25px rgba(0,0,0,.5);
+
+}
+
+section h2{
+
+    color:#D4AF37;
+
+    margin-bottom:25px;
+
+    font-size:38px;
+
+}
+
+section p{
+
+    font-size:20px;
+
+    line-height:1.8;
+
+}
+
+/* Featured Card */
+
+.card{
+
+    width:320px;
+
+    margin:auto;
+
+    background:#101010;
+
+    border:2px solid #D4AF37;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:
+    0 0 20px rgba(212,175,55,.35);
+
+}
+
+.card h3{
+
+    color:#D4AF37;
+
+    margin-bottom:15px;
+
+}
+
+.card h4{
+
+    margin-top:20px;
+
+    font-size:30px;
+
+    color:white;
+
+}
+
+/* Footer */
+
+footer{
+
+    margin-top:80px;
+
+    padding:30px;
+
+    color:#D4AF37;
+
+    border-top:1px solid rgba(212,175,55,.35);
+
 }
