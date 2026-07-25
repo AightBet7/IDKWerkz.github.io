@@ -13,7 +13,29 @@ html{
 }
 
 body{
-    background:red;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+
+    background:
+        linear-gradient(135deg, #050505 0%, #121212 50%, #050505 100%),
+        repeating-linear-gradient(
+            45deg,
+            transparent 0px,
+            transparent 35px,
+            rgba(212,175,55,0.08) 36px,
+            transparent 38px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            transparent 0px,
+            transparent 55px,
+            rgba(255,255,255,0.03) 56px,
+            transparent 58px
+        );
+
+    background-blend-mode: normal;
 }
 /* ==========================
    Header
