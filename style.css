@@ -1,6 +1,6 @@
-/* ==========================
-   IDK Werkz Premium Theme
-========================== */
+/* ======================================
+   IDK WERKZ PREMIUM WEBSITE
+====================================== */
 
 *{
     margin:0;
@@ -12,61 +12,108 @@ html{
     scroll-behavior:smooth;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    text-align: center;
+body{
 
-    background: url("background.png") center center / cover fixed no-repeat;
+    font-family:Arial, Helvetica, sans-serif;
+
+    color:white;
+
+    text-align:center;
+
+    background:url("background.png") center center / cover fixed no-repeat;
+
 }
+
 /* ==========================
-   Header
+   HERO
 ========================== */
 
 header{
 
-    padding:40px 20px;
+    width:90%;
+    max-width:1200px;
 
-}
+    margin:40px auto;
 
-/* Logo */
+    padding:50px;
 
-.logo{
+    background:rgba(0,0,0,.55);
 
-    width:400px;
-    max-width:90%;
-    display:block;
-    margin:25px auto;
+    border:2px solid rgba(212,175,55,.45);
 
-}
+    border-radius:30px;
 
-/* Main title */
+    backdrop-filter:blur(6px);
 
-h1{
-
-    font-size:60px;
-    color:#D4AF37;
-
-    text-shadow:
-    0 0 10px rgba(212,175,55,.7),
-    0 0 20px rgba(212,175,55,.3);
-
-}
-
-/* Subtitle */
-
-.tagline{
-
-    color:#dddddd;
-    font-size:22px;
-    margin-top:10px;
-    margin-bottom:40px;
+    box-shadow:
+    0 0 40px rgba(212,175,55,.25);
 
 }
 
 /* ==========================
-   Navigation
+   LOGO
+========================== */
+
+.logo{
+
+    width:400px;
+
+    max-width:90%;
+
+    display:block;
+
+    margin:20px auto;
+
+    filter:
+    drop-shadow(0 0 25px gold);
+
+    transition:.4s;
+
+}
+
+.logo:hover{
+
+    transform:scale(1.05);
+
+    filter:
+    drop-shadow(0 0 45px gold);
+
+}
+
+/* ==========================
+   TITLE
+========================== */
+
+h1{
+
+    font-size:62px;
+
+    color:#D4AF37;
+
+    margin-top:15px;
+
+    text-shadow:
+
+    0 0 15px gold,
+
+    0 0 35px rgba(212,175,55,.5);
+
+}
+
+.tagline{
+
+    margin-top:15px;
+
+    margin-bottom:35px;
+
+    color:#EEEEEE;
+
+    font-size:24px;
+
+}
+
+/* ==========================
+   NAVIGATION
 ========================== */
 
 nav{
@@ -77,47 +124,59 @@ nav{
 
 nav a{
 
+    display:inline-block;
+
+    margin:10px;
+
+    padding:14px 28px;
+
+    border-radius:40px;
+
+    border:2px solid #D4AF37;
+
     color:#D4AF37;
 
     text-decoration:none;
 
-    margin:15px;
-
-    font-size:20px;
-
-    transition:.3s;
+    transition:.35s;
 
 }
 
 nav a:hover{
 
-    color:white;
+    background:#D4AF37;
 
-    text-shadow:0 0 12px gold;
+    color:black;
+
+    box-shadow:
+
+    0 0 25px gold;
 
 }
 
 /* ==========================
-   Sections
+   SECTIONS
 ========================== */
 
 section{
 
-    width:85%;
+    width:88%;
+
     max-width:1100px;
 
-    margin:60px auto;
+    margin:50px auto;
 
-    background:rgba(0,0,0,.45);
+    padding:45px;
+
+    background:rgba(0,0,0,.50);
+
+    border-radius:25px;
 
     border:1px solid rgba(212,175,55,.35);
 
-    border-radius:20px;
-
-    padding:40px;
-
     box-shadow:
-    0 0 25px rgba(0,0,0,.5);
+
+    0 0 25px rgba(0,0,0,.6);
 
 }
 
@@ -125,9 +184,9 @@ section h2{
 
     color:#D4AF37;
 
-    margin-bottom:25px;
+    font-size:40px;
 
-    font-size:38px;
+    margin-bottom:25px;
 
 }
 
@@ -139,24 +198,39 @@ section p{
 
 }
 
-/* Featured Card */
+/* ==========================
+   FEATURED CARD
+========================== */
 
 .card{
 
-    width:320px;
+    width:340px;
 
-    margin:auto;
+    margin:30px auto;
+
+    padding:30px;
 
     background:#101010;
 
     border:2px solid #D4AF37;
 
-    border-radius:18px;
+    border-radius:20px;
 
-    padding:25px;
+    transition:.35s;
 
     box-shadow:
+
     0 0 20px rgba(212,175,55,.35);
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+
+    0 0 35px gold;
 
 }
 
@@ -172,22 +246,58 @@ section p{
 
     margin-top:20px;
 
-    font-size:30px;
-
-    color:white;
+    font-size:32px;
 
 }
 
-/* Footer */
+/* ==========================
+   FOOTER
+========================== */
 
 footer{
 
     margin-top:80px;
 
-    padding:30px;
+    padding:35px;
 
     color:#D4AF37;
 
     border-top:1px solid rgba(212,175,55,.35);
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:700px){
+
+.logo{
+
+    width:220px;
+
+}
+
+h1{
+
+    font-size:42px;
+
+}
+
+nav a{
+
+    display:block;
+
+    margin:12px auto;
+
+    width:220px;
+
+}
+
+section{
+
+    padding:30px;
+
+}
 
 }
