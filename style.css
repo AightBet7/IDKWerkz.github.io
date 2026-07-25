@@ -18,7 +18,7 @@ body {
     color: white;
     text-align: center;
 
-    background: url("background.jpg") center center / cover fixed no-repeat;
+    background: url("background.png") center center / cover fixed no-repeat;
 }
 /* ==========================
    Header
