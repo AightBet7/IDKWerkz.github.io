@@ -1,7 +1,9 @@
 /* ======================================
    IDK WERKZ PREMIUM WEBSITE
 ====================================== */
-
+html {
+    scroll-behavior: smooth;
+}
 *{
     margin:0;
     padding:0;
