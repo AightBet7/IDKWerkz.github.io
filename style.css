@@ -483,3 +483,89 @@ section{
         min-height: 280px;
     }
 }
+/*======================================
+  PRICE LIST
+======================================*/
+
+.price-table{
+    width:100%;
+    margin-top:35px;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:18px;
+    background:rgba(0,0,0,.45);
+    border:1px solid rgba(212,175,55,.35);
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+
+.price-table th{
+    background:linear-gradient(90deg,#8b6b15,#d4af37,#8b6b15);
+    color:#000;
+    padding:18px;
+    font-size:22px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.price-table td{
+    padding:16px 22px;
+    border-bottom:1px solid rgba(212,175,55,.18);
+    font-size:17px;
+    color:#f5f5f5;
+}
+
+.price-table td:first-child{
+    text-align:left;
+}
+
+.price-table td:last-child{
+    text-align:right;
+    font-weight:bold;
+    color:#FFD54F;
+}
+
+.price-table tr:hover{
+    background:rgba(212,175,55,.08);
+    transition:.25s;
+}
+
+.table-heading td{
+    background:rgba(212,175,55,.18);
+    color:#D4AF37;
+    font-size:20px;
+    font-weight:bold;
+    text-align:center !important;
+    letter-spacing:1px;
+}
+
+.highlight-row{
+    background:rgba(212,175,55,.15);
+}
+
+.highlight-row td{
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.highlight-row td:last-child{
+    color:#FFD54F;
+    font-size:20px;
+}
+
+@media (max-width:768px){
+
+    .price-table th{
+        font-size:17px;
+        padding:14px;
+    }
+
+    .price-table td{
+        font-size:15px;
+        padding:12px 14px;
+    }
+
+    .table-heading td{
+        font-size:17px;
+    }
+}
