@@ -569,3 +569,56 @@ section{
         font-size:17px;
     }
 }
+/*======================================
+  OUR STORY
+======================================*/
+
+.about-box{
+
+    max-width:900px;
+
+    margin:40px auto;
+
+    padding:40px;
+
+    background:rgba(0,0,0,.45);
+
+    border:1px solid rgba(212,175,55,.4);
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.5);
+
+    text-align:center;
+
+}
+
+.about-box h3{
+
+    color:#D4AF37;
+
+    font-size:30px;
+
+    margin-bottom:25px;
+
+}
+
+.about-box p{
+
+    color:#eeeeee;
+
+    line-height:1.9;
+
+    margin-bottom:20px;
+
+    font-size:18px;
+
+}
+
+.about-box:hover{
+
+    box-shadow:0 0 25px rgba(212,175,55,.35);
+
+    transition:.3s;
+
+}
