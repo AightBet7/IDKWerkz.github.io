@@ -13,43 +13,8 @@ html{
 }
 
 body{
-
-    font-family:Arial, Helvetica, sans-serif;
-    color:white;
-    text-align:center;
-
-    background:
-        repeating-linear-gradient(
-            115deg,
-            rgba(255,215,0,0.03) 0px,
-            rgba(255,215,0,0.03) 2px,
-            transparent 2px,
-            transparent 130px
-        ),
-
-        repeating-linear-gradient(
-            70deg,
-            rgba(255,255,255,0.02) 0px,
-            rgba(255,255,255,0.02) 1px,
-            transparent 1px,
-            transparent 180px
-        ),
-
-        radial-gradient(circle at 20% 20%, rgba(255,215,0,0.12), transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(255,215,0,0.08), transparent 35%),
-
-        linear-gradient(
-            135deg,
-            #020202,
-            #0a0a0a,
-            #151515,
-            #080808,
-            #020202
-        );
-
-    background-attachment: fixed;
+    background:red;
 }
-
 /* ==========================
    Header
 ========================== */
