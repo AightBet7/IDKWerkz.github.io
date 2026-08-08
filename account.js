@@ -58,17 +58,7 @@ signupForm.addEventListener("submit", async (event) => {
         }
 
         // Create the customer's profile
-        const { error: insertError } = await supabaseClient
-            .from("profiles")
-            .insert({
-                id: data.user.id,
-                name: name
-            });
-
-        if (insertError) {
-            throw insertError;
-        }
-
+       
         alert(
             "Account created! Check your email to verify your IDK Werkz account."
         );
