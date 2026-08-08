@@ -75,8 +75,6 @@ signupForm.addEventListener("submit", async (event) => {
         alert(error.message);
     }
 });
-
-
 // ==========================
 // LOG IN
 // ==========================
@@ -87,32 +85,51 @@ loginForm.addEventListener("submit", async (event) => {
     const name = document.getElementById("login-name").value.trim();
     const password = document.getElementById("login-password").value;
 
-    try {
-        // Find the email connected to this name
-        const { data: profile, error } = await supabaseClient
-            .from("profiles")
-            .select("id")
-            .eq("name", name)
-            .maybeSingle();
+    if (!name || !password) {
+        alert("Please enter your name and password.");
+        return;
+    }
 
-        if (error) {
-            throw error;
+    try {
+        // Securely find the email associated with the name
+        const { data: email, error: lookupError } =
+            await supabaseClient.rpc("get_login_email", {
+                login_name: name
+            });
+
+        if (lookupError) {
+            throw lookupError;
         }
 
-        if (!profile) {
+        if (!email) {
             alert("Account not found.");
             return;
         }
 
-        alert(
-            "The login system needs one more secure connection before Name + Password login can work."
-        );
+        // Sign in through Supabase
+        const { data, error } =
+            await supabaseClient.auth.signInWithPassword({
+                email: email,
+                password: password
+            });
+
+        if (error) {
+            alert("Incorrect name or password.");
+            return;
+        }
+
+        alert("Welcome back, " + name + "! 🐺");
+
+        // We'll replace this with the customer's account page later
+        window.location.href = "account.html";
 
     } catch (error) {
         console.error(error);
-        alert(error.message);
+        alert("Something went wrong while logging in.");
     }
 });
+
+
 
 
 // ==========================
