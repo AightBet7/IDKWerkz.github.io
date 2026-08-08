@@ -216,3 +216,6 @@ forgotPassword.addEventListener("click", async () => {
         alert("Password recovery failed: " + error.message);
     }
 });
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>
+<script src="account.js"></script>
