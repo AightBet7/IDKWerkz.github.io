@@ -128,10 +128,6 @@ loginForm.addEventListener("submit", async (event) => {
         alert("Something went wrong while logging in.");
     }
 });
-
-
-
-
 // ==========================
 // FORGOT PASSWORD
 // ==========================
@@ -147,20 +143,68 @@ forgotPassword.addEventListener("click", async () => {
     }
 
     try {
-        const { error } = await supabaseClient.auth.resetPasswordForEmail(
-            email.trim()
-        );
+        const { error } = await supabaseClient.auth.signInWithOtp({
+            email: email.trim(),
+            options: {
+                shouldCreateUser: false
+            }
+        });
 
         if (error) {
             throw error;
         }
 
-        alert(
-            "Password recovery instructions have been sent to your email."
+        const otp = prompt(
+            "Check your email for your IDK Werkz OTP, then enter it here:"
         );
+
+        if (!otp) {
+            return;
+        }
+
+        const { error: verifyError } =
+            await supabaseClient.auth.verifyOtp({
+                email: email.trim(),
+                token: otp.trim(),
+                type: "recovery"
+            });
+
+        if (verifyError) {
+            throw verifyError;
+        }
+
+        const newPassword = prompt(
+            "Enter your new account password:"
+        );
+
+        if (!newPassword) {
+            return;
+        }
+
+        const confirmPassword = prompt(
+            "Confirm your new account password:"
+        );
+
+        if (newPassword !== confirmPassword) {
+            alert("The passwords do not match.");
+            return;
+        }
+
+        const { error: updateError } =
+            await supabaseClient.auth.updateUser({
+                password: newPassword
+            });
+
+        if (updateError) {
+            throw updateError;
+        }
+
+        alert("Your password has been changed successfully! 🐺");
 
     } catch (error) {
         console.error(error);
         alert(error.message);
     }
 });
+
+
