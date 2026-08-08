@@ -705,3 +705,112 @@ section{
     box-shadow:
         0 0 20px rgba(212, 175, 55, 0.6);
 }
+/* ==========================
+   Limited Edition Mutations
+========================== */
+
+.mutations-section {
+    width: 90%;
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 45px 25px;
+
+    background: rgba(5, 5, 5, 0.82);
+
+    border: 2px solid #D4AF37;
+    border-radius: 25px;
+
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+.section-badge {
+    display: inline-block;
+
+    padding: 8px 20px;
+
+    background: #D4AF37;
+    color: #080808;
+
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    border-radius: 20px;
+}
+
+.mutations-section h2 {
+    color: #D4AF37;
+    font-size: 36px;
+    margin: 20px 0 10px;
+}
+
+.section-description {
+    color: #ddd;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.mutation-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.mutation-card {
+    position: relative;
+
+    padding: 30px 15px;
+
+    background: rgba(20, 20, 20, 0.9);
+
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: 18px;
+
+    transition: 0.25s;
+}
+
+.mutation-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #D4AF37;
+
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.mutation-card h3 {
+    color: white;
+    font-size: 22px;
+    margin: 25px 0 10px;
+}
+
+.mutation-card p {
+    color: #bbb;
+    margin-bottom: 20px;
+}
+
+.limited-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    padding: 5px 9px;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    color: #D4AF37;
+
+    border: 1px solid #D4AF37;
+    border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    .mutation-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .mutation-grid {
+        grid-template-columns: 1fr;
+    }
+}
