@@ -142,9 +142,12 @@ forgotPassword.addEventListener("click", async () => {
         return;
     }
 
+    const cleanEmail = email.trim();
+
     try {
+        // Send a one-time password to the email
         const { error } = await supabaseClient.auth.signInWithOtp({
-            email: email.trim(),
+            email: cleanEmail,
             options: {
                 shouldCreateUser: false
             }
@@ -155,18 +158,19 @@ forgotPassword.addEventListener("click", async () => {
         }
 
         const otp = prompt(
-            "Check your email for your IDK Werkz OTP, then enter it here:"
+            "Check your email for your OTP and enter the code here:"
         );
 
         if (!otp) {
             return;
         }
 
+        // Verify the OTP
         const { error: verifyError } =
             await supabaseClient.auth.verifyOtp({
-                email: email.trim(),
+                email: cleanEmail,
                 token: otp.trim(),
-                type: "recovery"
+                type: "email"
             });
 
         if (verifyError) {
@@ -190,6 +194,12 @@ forgotPassword.addEventListener("click", async () => {
             return;
         }
 
+        if (newPassword.length < 6) {
+            alert("Your password must be at least 6 characters.");
+            return;
+        }
+
+        // Change the password
         const { error: updateError } =
             await supabaseClient.auth.updateUser({
                 password: newPassword
@@ -203,8 +213,6 @@ forgotPassword.addEventListener("click", async () => {
 
     } catch (error) {
         console.error(error);
-        alert(error.message);
+        alert("Password recovery failed: " + error.message);
     }
 });
-
-
