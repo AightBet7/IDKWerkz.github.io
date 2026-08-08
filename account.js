@@ -43,10 +43,15 @@ signupForm.addEventListener("submit", async (event) => {
         }
 
         // Create the secure authentication account
-        const { data, error } = await supabaseClient.auth.signUp({
-            email: email,
-            password: password
-        });
+       const { data, error } = await supabaseClient.auth.signUp({
+    email: email,
+    password: password,
+    options: {
+        data: {
+            name: name
+        }
+    }
+});
 
         if (error) {
             throw error;
